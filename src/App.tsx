@@ -1,12 +1,10 @@
 import "./App.css";
-import { MyComponent } from "@/components/MyComponent";
+import React from "react";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/AppRoutes";
 
-function App() {
-	return (
-		<>
-			<MyComponent />
-		</>
-	);
-}
+const App: React.FC = () => {
+	return <RouterProvider router={router} />;
+};
 
 export default App;

@@ -5,11 +5,19 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended', // Added for Prettier integration
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
-  plugins: ['react-refresh'], // 'prettier' not needed here as it's included in extends
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+  plugins: ['react-refresh'],
   rules: {
     // Add or adjust rules here
     'react-refresh/only-export-components': [
@@ -19,4 +27,9 @@ module.exports = {
     // Prettier rule
     'prettier/prettier': 'error',
   },
+  settings: {
+    react: {
+      version: "detect" // Automatically detect the react version
+    }
+  }
 };

@@ -1,7 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import type { PayloadAction } from "@reduxjs/toolkit";
-
 interface CounterState {
 	value: number;
 }
